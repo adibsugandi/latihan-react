@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Counter from "./component/counter/counter";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route path="/" exact>
+          <h1>Home</h1>
+        </Route>
+        <Route path="/a">
+          <h1>A</h1>
+        </Route>
+        <Route path="/b">
+          <h1>B</h1>
+        </Route>
+        <Route path="/">
+          <h1>Error</h1>
+        </Route>
+      </Switch>
     </div>
+
+    // <Counter />
+    // <Counter />
   );
 }
+
+// function Paijo(props) {
+//   return (
+//     <div></div>
+//     // <h1>
+//     //   Paijo Sedang {props.children} sedang menggunakan baju {props.baju}
+//     // </h1>
+//   );
+// }
 
 export default App;
